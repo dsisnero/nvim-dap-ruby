@@ -169,7 +169,7 @@ local function setup_ruby_configuration(dap)
         }
         localfs = true;
         waiting = 1000;
-    }
+    },
     {
        type = 'ruby';
        name = 'run rspec current_file:current_line';
