@@ -6,6 +6,9 @@ local function load_module(module_name)
   return module
 end
 
+---@@private
+
+
 --[[ HOW TO DEBUG
 create script a.rb to debug
 
@@ -152,6 +155,21 @@ local function setup_ruby_configuration(dap)
        localfs = true;
        waiting = 1000;
     },
+    {
+        type='ruby';
+        name = 'run rake';
+        bundle = '';
+        request='attach';
+        command = 'rake';
+        script = "eosh_initial";
+        port = 38698;
+        server = '127.0.0.1';
+        options = {
+            source_filetype = 'ruby'
+        }
+        localfs = true;
+        waiting = 1000;
+    }
     {
        type = 'ruby';
        name = 'run rspec current_file:current_line';
